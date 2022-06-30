@@ -1,0 +1,38 @@
+﻿@model crud.Models.staff
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="display: flex; align-items: center;">
+    <h2>Delete Employee</h2>
+    <div style="margin-left:17vh">
+        <a href="@Url.Action("Index","staffs")"><i class="fa-solid fa-xmark" style="color:grey"></i></a>
+    </div>
+</div>
+
+
+<div>
+    <hr />
+    <h5>Are you sure you want to delete these Records?</h5>
+    <h7 style="color: #d1af06">This action cannot be undone.</h7>
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-group" style="display: flex; align-items: center; flex-direction: row-reverse; margin-top:15px">
+            <div>
+                <input type="submit" value="Delete" class="btn btn-default" style="background-color:red; padding:5px; padding-left:50px; padding-right:50px; color:white; font-size:15px" />
+            </div>
+            <div style="margin-right:15px;">
+                <a href="@Url.Action("Index", "staffs")" style="text-decoration: none; border-color: none; color:black">
+                    Cancel
+                </a>
+
+            </div>
+        </div>
+    }
+</div>
